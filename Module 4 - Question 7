@@ -1,0 +1,5 @@
+select count(locno), planno, round(avg(numberfld), 2) avgnumberfld
+from eventplanline
+where locno = 'L100'
+group by planno
+having count(locno) > 1
