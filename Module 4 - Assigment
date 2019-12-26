@@ -1,0 +1,26 @@
+1 select distinct custcity, custstate, custzip
+  from customer;
+
+2 select empname, phone, email
+from employee
+where phone like '3%';
+
+3 select *
+from resourcetbl
+where rate between '$10' and '$20';
+
+4 select status, dateauth, eventno
+from eventrequest
+where  ((status = 'Approved') or (status = 'Denied')) and
+dateauth like '%07%'
+
+
+5 select locname, facility.facno, locno, facname
+from location, facility
+where facility.facno = 'F101' and
+    facname like 'Basket%'
+
+
+6 select count(eventplanline.resno), planno, count(resourcetbl.rate) from eventplanline, resourcetbl
+group by planno
+
